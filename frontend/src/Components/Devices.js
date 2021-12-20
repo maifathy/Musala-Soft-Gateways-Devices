@@ -10,7 +10,7 @@ const Devices = (props) => {
   const dispatch = useDispatch();
   const message = useRef(null);
   const devices = useSelector((state) => {
-    var gateway = state.gateway.gateways.filter(function (item) {
+    var gateway = state.gateway.gateways.filter((item) => {
       return item._id === props.gatewayId;
     });
 
