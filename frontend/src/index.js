@@ -12,5 +12,6 @@ ReactDOM.render(
     <BrowserRouter history={history} location={history.location} navigator={history}>
       <App />
     </BrowserRouter>
-  </Provider>
-  , document.getElementById('root'));
+  </Provider>,
+  document.getElementById('root')
+);

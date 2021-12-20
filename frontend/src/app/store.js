@@ -3,6 +3,6 @@ import gatewayReducer from '../redux/gateway/gatewaySlice.js';
 
 export const store = configureStore({
   reducer: {
-    gateway: gatewayReducer,
-  },
-})
+    gateway: gatewayReducer
+  }
+});

@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, {
+  useState, useEffect, useCallback, useRef
+} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setGateways } from '../redux/gateway/gatewaySlice.js';
 import { Link } from 'react-router-dom';
@@ -13,16 +15,16 @@ const Gateways = () => {
   const message = useRef(null);
 
   useEffect(() => {
-    async function getAsyncGateways(){
-      return await getGateways();
+    async function getAsyncGateways() {
+      const val = await getGateways();
+      return val;
     }
     const gatewaysObj = getAsyncGateways();
     gatewaysObj.then((data) => {
-      if(data.gateways.length > 0){
+      if (data.gateways.length > 0) {
         dispatch(setGateways(data.gateways));
         message.current.innerHTML = '';
-      }
-      else{
+      } else {
         message.current.innerHTML = 'No Gateways to show!!';
       }
     });
@@ -30,25 +32,29 @@ const Gateways = () => {
 
   const showDevices = useCallback((id) => {
     setIds([...ids, id]);
-    console.log([...ids, id]);
-  },[gateways]);
+  }, [gateways]);
 
-  return(
-    <div className="App">
-      <p ref={message}></p>
+  return (
+    <div className='App'>
+      <p ref={ message }></p>
       <ol>
-        {gateways !== undefined && gateways.map((gateway) =>
-          <li key={gateway._id}>
-            <Link to={`${gateway._id}`}>{gateway.name}</Link>
-            <span> </span>
-            <a onClick={() => showDevices(gateway._id)} style={{cursor: 'pointer', color: 'green'}}>Devices &gt;&gt;</a>
-            { ids !== [] && ids.indexOf(gateway._id) > 0 && <Devices gatewayId={gateway._id} /> }
-          </li>
-        )}
+        {
+          gateways !== undefined && gateways.map(
+            (gateway) => <li key={ gateway._id }>
+              <Link to={`/gateways/${ gateway._id }`}>{ gateway.name }</Link>
+              <span> </span>
+              <a onClick={() => showDevices(gateway._id)} style={{ cursor: 'pointer', color: 'green' }}>Devices &gt;&gt;</a>
+              {
+                ids !== [] && ids.indexOf(gateway._id) > 0
+                && <Devices gatewayId={ gateway._id } />
+              }
+            </li>
+          )
+        }
       </ol>
       <NewGateway />
     </div>
-  )
-}
+  );
+};
 
 export default Gateways;

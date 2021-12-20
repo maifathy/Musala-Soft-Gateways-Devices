@@ -19,43 +19,46 @@ const Devices = (props) => {
 
   const delDevice = (id) => {
     deleteDevice(id)
-    .then((data) => {
-      if(data.status === 200)
-        dispatch(removeDevice(id));
-      message.current.innerHTML = data.message;
-    })
-    .catch((err) => message.current.innerHTML = err.message);
-  }
+      .then((data) => {
+        if (data.status === 200) {
+          dispatch(removeDevice(id));
+        }
+        message.current.innerHTML = data.message;
+      })
+      .catch((err) => { message.current.innerHTML = err.message; });
+  };
 
   const newDevice = useCallback((e) => {
     e.preventDefault();
     addDevice(vendor, status, props.gatewayId)
-    .then((device) => {
-      if(device.status === 200)
-        dispatch(appendDevice({ device: device.device, gatewayId: props.gatewayId }));
-      message.current.innerHTML = device.message;
-    })
-    .catch((err) => message.current.innerHTML = err.message);
+      .then((device) => {
+        if (device.status === 200) {
+          dispatch(appendDevice({ device: device.device, gatewayId: props.gatewayId }));
+        }
+        message.current.innerHTML = device.message;
+      })
+      .catch((err) => { message.current.innerHTML = err.message; });
     setVendor('');
     setStatus('');
-  },[vendor, status, props.gatewayId]);
+  }, [vendor, status, props.gatewayId]);
 
-  return(
+  return (
     <>
       <p ref={message}></p>
       <ul>
-        {devices.map((device) =>
-          <li key={device._id}>
+        {devices.map(
+          (device) => <li key={device._id}>
             <div>
               <label>{device.vendor}</label> |
               <label>{device.status}</label> |
               <input type='button' onClick={() => delDevice(device._id)} value='Remove'/>
             </div>
           </li>
-        )}
+        )
+      }
       </ul>
-      {devices.length < 10 &&
-        <form onSubmit={newDevice} className='form'>
+      {devices.length < 10
+        && <form onSubmit={newDevice} className='form'>
           <label>
             <input type='text' value={vendor} placeholder='Vendor' onChange={(e) => setVendor(e.target.value)}/>
           </label>
@@ -73,10 +76,10 @@ const Devices = (props) => {
         </form>
       }
       </>
-  )
-}
+  );
+};
 Devices.propTypes = {
   gatewayId: PropTypes.number
-}
+};
 
 export default Devices;

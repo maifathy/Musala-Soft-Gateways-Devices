@@ -9,7 +9,7 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    radix: 0,
+    'radix': 0,
     'no-console': 0,
     'linebreak-style': 0,
     'no-underscore-dangle': 0,
