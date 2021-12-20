@@ -12,7 +12,6 @@ const app = express();
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 const router = express.Router();
 
-
 // Connect to the db
 mongoUtil.connect(() => {
   app.use(bodyParser.json());
