@@ -5,10 +5,13 @@ import bodyParser from 'body-parser';
 import routeDevice from './routes/routeDevice.js';
 import routeGateway from './routes/routeGateway.js';
 import mongoUtil from './utils/dbHandler.js';
+import path from 'path';
 // import { fillData } from './utils/helpers.js';
 
 const app = express();
+app.use(express.static(path.join(__dirname, '/frontend/build')));
 const router = express.Router();
+
 
 // Connect to the db
 mongoUtil.connect(() => {
