@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
+import { dbUrl } from './helpers.js';
 
 const mongoUtil = {
   connect: (callback) => {
     mongoose.connect(
-      'mongodb+srv://admin:admin@gateways.zz1nq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+      dbUrl,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
