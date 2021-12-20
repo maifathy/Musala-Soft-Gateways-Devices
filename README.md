@@ -4,6 +4,7 @@
 * [Introduction](#introduction)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Test](#test)
 * [Launch](#launch)
 * [Expected Output](#expected-output)
 
@@ -52,6 +53,14 @@ $ cd ../gatways-devices/frontend
 $ npm install
 ```
 The above commands will install the dependencies for both backend server and frontend server.
+
+## Test
+in cmd:
+
+```
+$ cd ../gatways-devices
+$ npm test
+```
 
 ## Launch
 To launch this web, in your npm console:
