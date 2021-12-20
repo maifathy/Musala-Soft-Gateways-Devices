@@ -59,7 +59,7 @@ export const putData = async (url = '', data = {}) => {
     credentials: 'same-origin',
     headers: {
       ...headers,
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
   });
@@ -90,5 +90,6 @@ export const deleteData = async (url = '', data = {}) => {
     return newData;
   } catch (e) {
     console.log(`DELETE method error: ${e}`);
+    return e;
   }
 };
