@@ -2,6 +2,8 @@ import Devices from './../models/device.js';
 import Gateways from './../models/gateway.js';
 import { v4 as uuidv4 } from 'uuid';
 
+export const dbUrl = 'mongodb://localhost:27017/Gateways';
+
 export const insertGateway = async (name, ip) => {
   let insertRes;
   insertRes = new Gateways(
