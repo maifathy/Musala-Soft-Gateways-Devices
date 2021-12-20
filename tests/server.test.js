@@ -1,4 +1,5 @@
 import app from '../index.js';
+import { dbUrl } from '../utils/helpers.js';
 import Gateways from '../models/gateway.js';
 import Devices from '../models/device.js';
 import mongoose from 'mongoose';
@@ -7,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 beforeEach((done) => {
   mongoose.connect(
-    'mongodb://localhost:27017/Gateways',
+    dbUrl,
     { useNewUrlParser: true, useUnifiedTopology: true },
     () => done()
   );
