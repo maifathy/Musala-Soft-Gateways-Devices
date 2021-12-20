@@ -2,9 +2,10 @@
 export const api = 'http://localhost:1000/api/v1';
 
 // token
-let token = localStorage.token
+let token = localStorage.token;
 if (!token) {
-  token = localStorage.token = Math.random().toString(36).substr(-8);
+  localStorage.token = Math.random().toString(36).substr(-8);
+  token = localStorage.token;
 }
 
 // headers
@@ -29,7 +30,8 @@ export const postData = async (url = '', data = {}) => {
     const newData = await response.json();
     return newData;
   } catch (e) {
-      console.log(`POST method error: ${e}`);
+    console.log(`POST method error: ${e}`);
+    return e;
   }
 };
 
@@ -46,6 +48,7 @@ export const getData = async (url = '') => {
     return newData;
   } catch (e) {
     console.log(`GET method error: ${e}`);
+    return e;
   }
 };
 
@@ -66,6 +69,7 @@ export const putData = async (url = '', data = {}) => {
     return newData;
   } catch (e) {
     console.log(`PUT method error: ${e}`);
+    return e;
   }
 };
 
