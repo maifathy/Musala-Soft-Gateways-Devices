@@ -7,6 +7,7 @@
 * [Test](#test)
 * [Launch](#launch)
 * [Expected Output](#expected-output)
+* [To-do](#todo)
 
 ## Introduction
  A simple interface to preview the available gateways and their devices.
@@ -83,3 +84,7 @@ User can click a single gateway to show its details (Used the api call instead o
   show the usage of it as required).
 
 Redux is managing all adding of gateways and adding/removing of devices.
+
+## TO-DO
+Layout issues specially the messages used to get feedback for the user, need imporovements.
+CI/CD to be completed.
