@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const mongoUtil = {
   connect: (callback) => {
     mongoose.connect(
-      'mongodb://localhost:27017/Gateways',
+      'mongodb+srv://admin:admin@gateways.zz1nq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
