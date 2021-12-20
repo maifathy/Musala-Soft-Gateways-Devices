@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node server.js && npm start"
+    "start": "node server.js"
   },
   "author": "Mai Fathy",
   "license": "ISC",
