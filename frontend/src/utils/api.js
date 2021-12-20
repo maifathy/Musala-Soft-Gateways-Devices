@@ -14,22 +14,24 @@ export function getGateway(id) {
 }
 
 export function addGateway(name, ip) {
-  return postData(`${api}/Gateways/`,
-     {
-       name: name,
-       ip: ip
-     }
+  return postData
+  (`${api}/Gateways/`,
+    {
+      name: name,
+      ip: ip
+    }
   )
   .then(newGateway => newGateway);
 }
 
 export function addDevice(vendor, status, gatewayId) {
-  return postData(`${api}/Devices/`,
-     {
-       vendor: vendor,
-       status: status,
-       gatewayId: gatewayId
-     }
+  return postData
+  (`${api}/Devices/`,
+    {
+      vendor: vendor,
+      status: status,
+      gatewayId: gatewayId
+    }
   )
   .then(newDevice => newDevice);
 }
