@@ -2,6 +2,7 @@
 
 ## Table of Contents
 * [Introduction](#introduction)
+* [Technologies](#technologies)
 * [Setup](#setup)
 * [Launch](#launch)
 * [Expected Output](#expected-output)
@@ -12,25 +13,31 @@
 
 ## Technologies
  * MongoDB
- To download installer: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/, after installation, 
- in your cmd, type:
- 
- ```
-  [PATH]/MongoDB/Server/5.0/bin/
- ```
- 
- to create the database:
- 
- ```
- use Gateways
- ```
- Note: local database is important for test cases to be done.
- 
- Another shared database is available, to use it, in ../utils/helpers.js.
- Update dbUrl to be:
- ```
- dbUrl = 'mongodb+srv://admin:admin@gateways.zz1nq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
- ```
+   To download installer: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/, after installation, 
+   in your cmd, cd to:
+
+   ```
+   [PATH]/MongoDB/Server/5.0/bin/
+   ```
+   then type: 
+   ```
+   mongo
+   ```
+
+   The server now is working.
+
+   To create the database:
+
+   ```
+   use Gateways
+   ```
+   Note: local database is important for test cases to be done.
+
+   Another shared database is available, to use it, in ../utils/helpers.js.
+   Update dbUrl to be:
+   ```
+   dbUrl = 'mongodb+srv://admin:admin@gateways.zz1nq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+   ```
  
  * Node.js & express
  * React framework & redux toolkit
