@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-
 import bodyParser from 'body-parser';
 import routeDevice from './routes/routeDevice.js';
 import routeGateway from './routes/routeGateway.js';
