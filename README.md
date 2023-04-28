@@ -93,4 +93,5 @@ Redux is managing all adding of gateways and adding/removing of devices.
 
 ## TO-DO
 Layout issues specially the messages used to get feedback for the user, need imporovements.
-Enhanced React Unit Tests.
+
+Enhance React Unit Tests.
