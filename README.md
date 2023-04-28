@@ -36,13 +36,13 @@
    Note: local database is important for test cases to be done.
 
    Another shared database is available, to use it, in .env file
-   Update dbUrl to be:
+   Update DB_URL to be:
    ```
    DB_URL='mongodb+srv://admin:admin@gateways.zz1nq.mongodb.net/test';
    ```
  
  * Node.js & express
- * React framework & redux toolkit
+ * React framework & redux toolkit & styled_components
 
 ## Setup
 To run this project, install it locally using npm:
@@ -70,7 +70,7 @@ $ npm run test
 ```
 
 ## Launch
-To launch this web, in your npm console:
+To launch in browser, in your npm console:
 
 ```
 $ cd ../Musala-Soft-Gateways-Devices/backend
