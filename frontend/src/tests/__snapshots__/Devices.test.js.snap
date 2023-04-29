@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Devices Snapshot - renders correctly enzyme 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+    
+  <BrowserRouter
+    history={
+      Object {
+        "action": "POP",
+        "back": [Function],
+        "block": [Function],
+        "createHref": [Function],
+        "forward": [Function],
+        "go": [Function],
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+    location={
+      Object {
+        "hash": "",
+        "key": "default",
+        "pathname": "/",
+        "search": "",
+        "state": null,
+      }
+    }
+    navigator={
+      Object {
+        "action": "POP",
+        "back": [Function],
+        "block": [Function],
+        "createHref": [Function],
+        "forward": [Function],
+        "go": [Function],
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Router
+      location={
+        Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        }
+      }
+      navigationType="POP"
+      navigator={
+        Object {
+          "action": "POP",
+          "createHref": [Function],
+          "createURL": [Function],
+          "encodeLocation": [Function],
+          "go": [Function],
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "default",
+            "pathname": "/",
+            "search": "",
+            "state": null,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+       
+      <Devices
+        gatewayId={0}
+      >
+        <ul />
+        <form
+          className="form"
+          data-testid="form"
+          onSubmit={[Function]}
+        >
+          <styled.input
+            data-testid="vendor_input"
+            onChange={[Function]}
+            placeholder="Vendor"
+            type="text"
+            value=""
+          >
+            <input
+              className="sc-bgqQcB cAbwyu"
+              data-testid="vendor_input"
+              onChange={[Function]}
+              placeholder="Vendor"
+              type="text"
+              value=""
+            />
+          </styled.input>
+          <styled.select
+            data-testid="status_select"
+            onChange={[Function]}
+            value=""
+          >
+            <select
+              className="sc-gTRrQi gURgaj"
+              data-testid="status_select"
+              onChange={[Function]}
+              value=""
+            >
+              <option
+                value=""
+              >
+                Status
+              </option>
+              <option
+                value="Online"
+              >
+                Online
+              </option>
+              <option
+                value="Offline"
+              >
+                Offline
+              </option>
+            </select>
+          </styled.select>
+          <div>
+            <styled.button
+              data-testid="submit"
+              disabled={true}
+              type="submit"
+            >
+              <button
+                className="sc-ewnqHT gbhdnH"
+                data-testid="submit"
+                disabled={true}
+                type="submit"
+              >
+                Submit
+              </button>
+            </styled.button>
+          </div>
+        </form>
+      </Devices>
+       
+    </Router>
+  </BrowserRouter>
+   
+</Provider>
+`;

@@ -4,6 +4,7 @@ const ctrlGateway = {
   getGateway: async (req, res) => {
     await Gateways.findOne({ _id: req.params.id })
       .select('_id name _ip_buf')
+      .populate({ path: 'devices', select: '_id vendor status' })
       .exec((err, Gateway) => {
         if (err) {
           res.send(err.message);

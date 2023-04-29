@@ -1,8 +1,11 @@
+import mongoose from 'mongoose';
 import Devices from './../models/device.js';
 import Gateways from './../models/gateway.js';
 import { v4 as uuidv4 } from 'uuid';
+import dotenv from 'dotenv';
 
-export const dbUrl = 'mongodb://localhost:27017/Gateways';
+dotenv.config();
+export const dbUrl = process.env.DB_URL;
 
 export const insertGateway = async (name, ip) => {
   let insertRes;
@@ -45,4 +48,27 @@ export const insertDevice = async (vendor, status, gatewayId) => {
 export const fillData = () => {
   insertGateway('Gateway1', '127.0.0.1');
   insertDevice('Samsung', 'Online', 1);
+};
+
+export const clearCollections = async () => {
+  const collections = mongoose.connection.collections;
+  // await Devices.deleteMany({});
+  // await Gateways.deleteMany({});
+  await Promise.all(Object.values(collections).map(async (collection) => {
+    // if (collection !== Devices && collection !== Gateways) {
+    await collection.deleteMany({});
+    // }
+  }));
+};
+
+export const executeClearCollections = () => {
+  clearCollections()
+    .then((response) => {
+      console.log('response: ', response);
+      return { status: 200, message: 'Collections are successfully cleared!', state: response };
+    })
+    .catch((e) => {
+      console.log(`POST clearCollections error: ${e}`);
+      return { status: 400, message: 'An error happened while deleteing the collections.' };
+    });
 };

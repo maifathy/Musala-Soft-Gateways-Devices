@@ -15,9 +15,16 @@ beforeEach((done) => {
 });
 
 afterEach((done) => {
-  mongoose.connection.db.dropDatabase(() => {
-    mongoose.connection.close(() => done());
-  });
+  async function clearCollections() {
+    const collections = mongoose.connection.collections;
+    await Promise.all(Object.values(collections).map(async (collection) => {
+      await collection.deleteMany({});
+    }));
+  }
+  clearCollections()
+    .then(() => {
+      mongoose.connection.close(() => done());
+    });
 });
 
 it('Testing to see if Jest works', () => {

@@ -39,3 +39,10 @@ export function addDevice(vendor, status, gatewayId) {
 export function deleteDevice(deviceId) {
   return deleteData(`${api}/Devices/${deviceId}`);
 }
+
+export function clearCollections() {
+  return postData(
+    `${api}/clearCollections/`, {}
+  )
+    .then(response => response);
+}

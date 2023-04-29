@@ -1,15 +1,12 @@
 .App {
   text-align: center;
   margin: 10px;
-  border: 1px solid;
   max-width: max-content;
   padding: 10px;
-  background-color: azure;
-}
-
-.form {
-  border: 2px double;
-  padding: 5px;
+  background-color: #d8d8d029;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 li input {

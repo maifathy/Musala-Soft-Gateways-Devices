@@ -1,12 +1,11 @@
-import React, {
-  useState, useEffect, useCallback, useRef
-} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setGateways } from '../redux/gateway/gatewaySlice.js';
 import { Link } from 'react-router-dom';
 import { getGateways } from '../utils/api.js';
 import Devices from './Devices.js';
 import NewGateway from './NewGateway.js';
+import styled from 'styled-components';
 
 const Gateways = () => {
   const [ids, setIds] = useState([0]);
@@ -30,31 +29,45 @@ const Gateways = () => {
     });
   }, []);
 
-  const showDevices = useCallback((id) => {
-    setIds([...ids, id]);
-  }, [gateways]);
+  const showDevices = (id) => {
+    if(ids.indexOf(id) > 0){
+      const newIds = ids.filter(currentId => { return currentId !== id; });
+      console.log("ids: ", newIds);
+      setIds(newIds);
+    }
+    else setIds([...ids, id]);
+  };
 
   return (
     <div className='App'>
-      <p ref={ message }></p>
-      <ol>
-        {
-          gateways !== undefined && gateways.map(
-            (gateway) => <li key={ gateway._id }>
-              <Link to={`/gateways/${ gateway._id }`}>{ gateway.name }</Link>
-              <span> </span>
-              <a onClick={() => showDevices(gateway._id)} style={{ cursor: 'pointer', color: 'green' }}>Devices &gt;&gt;</a>
-              {
-                ids !== [] && ids.indexOf(gateway._id) > 0
-                && <Devices gatewayId={ gateway._id } />
-              }
-            </li>
-          )
-        }
-      </ol>
       <NewGateway />
+      <div style={{ width: '100%' }}>
+        <p ref={ message }></p>
+        <ol style={{ width: '80%'}}>
+          {
+            gateways !== undefined && gateways.map(
+              (gateway) => <ListItem key={ gateway._id }>
+                <Link style={{ float: 'left' }} to={`/gateways/${ gateway._id }`}>{ gateway.name }</Link>
+                <span> </span>
+                <a onClick={() => showDevices(gateway._id)} style={{ cursor: 'pointer', color: 'green' }}>Devices &gt;&gt;</a>
+                {
+                  ids !== [] && ids.indexOf(gateway._id) > 0
+                  && <Devices gatewayId={ gateway._id } />
+                }
+              </ListItem>
+            )
+          }
+        </ol>
+      </div>
     </div>
+
   );
 };
 
 export default Gateways;
+
+const ListItem = styled.li`
+  background-color: #fff;
+  margin-bottom: 6px;
+  padding: 5px;
+`;

@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`New Category Snapshot - renders correctly enzyme 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+    
+  <BrowserRouter
+    history={
+      Object {
+        "action": "POP",
+        "back": [Function],
+        "block": [Function],
+        "createHref": [Function],
+        "forward": [Function],
+        "go": [Function],
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+    location={
+      Object {
+        "hash": "",
+        "key": "default",
+        "pathname": "/",
+        "search": "",
+        "state": null,
+      }
+    }
+    navigator={
+      Object {
+        "action": "POP",
+        "back": [Function],
+        "block": [Function],
+        "createHref": [Function],
+        "forward": [Function],
+        "go": [Function],
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Router
+      location={
+        Object {
+          "hash": "",
+          "key": "default",
+          "pathname": "/",
+          "search": "",
+          "state": null,
+        }
+      }
+      navigationType="POP"
+      navigator={
+        Object {
+          "action": "POP",
+          "createHref": [Function],
+          "createURL": [Function],
+          "encodeLocation": [Function],
+          "go": [Function],
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "default",
+            "pathname": "/",
+            "search": "",
+            "state": null,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+       
+      <NewGateway>
+        <styled.div>
+          <div
+            className="sc-bgqQcB dxpCdu"
+          >
+            <h3>
+              New Gateway
+            </h3>
+            <form
+              data-testid="form"
+              onSubmit={[Function]}
+            >
+              <styled.input
+                data-testid="name_input"
+                onChange={[Function]}
+                placeholder="Name"
+                type="text"
+                value=""
+              >
+                <input
+                  className="sc-gTRrQi kOdMJF"
+                  data-testid="name_input"
+                  onChange={[Function]}
+                  placeholder="Name"
+                  type="text"
+                  value=""
+                />
+              </styled.input>
+              |
+              <styled.input
+                data-testid="ip_input"
+                onChange={[Function]}
+                placeholder="IP address"
+                type="text"
+                value=""
+              >
+                <input
+                  className="sc-gTRrQi kOdMJF"
+                  data-testid="ip_input"
+                  onChange={[Function]}
+                  placeholder="IP address"
+                  type="text"
+                  value=""
+                />
+              </styled.input>
+              <div>
+                <styled.button
+                  disabled={true}
+                  type="submit"
+                >
+                  <button
+                    className="sc-ewnqHT gbhdnH"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </styled.button>
+              </div>
+            </form>
+          </div>
+        </styled.div>
+      </NewGateway>
+       
+    </Router>
+  </BrowserRouter>
+   
+</Provider>
+`;
