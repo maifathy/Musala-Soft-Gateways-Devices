@@ -35,22 +35,22 @@
    ```
    Note: local database is important for test cases to be done.
 
-   Another shared database is available, to use it, in .env file
-   Update DB_URL to be:
+   Another shared database is available, to use it, in ../utils/helpers.js.
+   Update dbUrl to be:
    ```
-   DB_URL='mongodb+srv://admin:admin@gateways.zz1nq.mongodb.net/test';
+   dbUrl = 'mongodb+srv://admin:admin@gateways.zz1nq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
    ```
  
  * Node.js & express
- * React framework & redux toolkit & styled_components
+ * React framework & redux toolkit
 
 ## Setup
 To run this project, install it locally using npm:
 
 ```
-$ cd ../Musala-Soft-Gateways-Devices/backend
+$ cd ../gatways-devices
 $ npm install
-$ cd ../Musala-Soft-Gateways-Devices/frontend
+$ cd ../gatways-devices/frontend
 $ npm install
 ```
 The above commands will install the dependencies for both backend server and frontend server.
@@ -58,25 +58,19 @@ The above commands will install the dependencies for both backend server and fro
 ## Test
 in cmd:
 
-Backend test
 ```
-$ cd ../Musala-Soft-Gateways-Devices/backend
-$ npm run test
-```
-Frontend test, real database transactions is used, after each test call, the database collections are going to be cleared.
-```
-$ cd ../Musala-Soft-Gateways-Devices/frontend
-$ npm run test
+$ cd ../gatways-devices
+$ npm test
 ```
 
 ## Launch
-To launch in browser, in your npm console:
+To launch this web, in your npm console:
 
 ```
-$ cd ../Musala-Soft-Gateways-Devices/backend
-$ npm run start
-$ cd ../Musala-Soft-Gateways-Devices/frontend
-$ npm run start
+$ cd ../gatways-devices
+$ npm start
+$ cd ../gatways-devices/frontend
+$ npm start
 ```
 In your browser, go to: http://localhost:3000/
 
@@ -93,5 +87,4 @@ Redux is managing all adding of gateways and adding/removing of devices.
 
 ## TO-DO
 Layout issues specially the messages used to get feedback for the user, need imporovements.
-
-Enhance React Unit Tests.
+CI/CD to be completed.
