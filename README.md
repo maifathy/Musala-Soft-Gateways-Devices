@@ -63,7 +63,7 @@ Backend test
 $ cd ../Musala-Soft-Gateways-Devices/backend
 $ npm run test
 ```
-Frontend test, real database transactions is applied, after each test call, the database collections are going to be cleared.
+Frontend test, real database transactions is used, after each test call, the database collections are going to be cleared.
 ```
 $ cd ../Musala-Soft-Gateways-Devices/frontend
 $ npm run test
