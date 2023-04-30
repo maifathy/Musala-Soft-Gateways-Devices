@@ -91,4 +91,4 @@ it('Add New Device!', async () => {
       expect(getByTestId('vendor_input')).toBeEmptyDOMElement(),
       expect(getByTestId('status_select')).toHaveTextContent("Status")
     );
-});
+}); 

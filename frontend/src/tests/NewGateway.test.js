@@ -29,7 +29,7 @@ describe('Testing state, first load', () => {
 });
 
 afterEach(() => { 
-  cleanup; 
+  cleanup(); 
   clearCollections().then(() => {
     mongoose.connection.close();
   });
@@ -73,7 +73,7 @@ it('Valid Gateway details!!', async () => {
       expect(getByTestId('message')).toHaveTextContent('Gateway is successfully added'),
       expect(getByTestId('name_input')).toBeEmptyDOMElement(),
       expect(getByTestId('ip_input')).toBeEmptyDOMElement()
-    );
+    ); 
   })
 });
 
